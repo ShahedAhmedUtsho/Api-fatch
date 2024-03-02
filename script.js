@@ -1,6 +1,10 @@
+let load = document.getElementById('load')
+load.addEventListener('click',loadstart)
 
-
-let url = 'https://randomuser.me/api/';
+// methode 1 
+loadstart()
+function loadstart(){
+   let url = 'https://randomuser.me/api/';
 fetch(url)
 .then((res) => {
  return  res.json()
@@ -10,7 +14,16 @@ fetch(url)
    pestCard(data)
 })
 
+}
 
+
+// methode 2
+
+// async function loadstart(){
+//    let url = await fetch('https://randomuser.me/api/');
+//    let data = await url.json();
+//    pestCard(data)
+// }
 
 
 
